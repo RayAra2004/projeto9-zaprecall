@@ -1,10 +1,10 @@
+import Flashcards from "./components/Flashcards"
 
-import './App.css'
 
 function App() {
-
   return (
     <>
+      <Flashcards />
     </>
   )
 }
