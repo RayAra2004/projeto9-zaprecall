@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
-export default function Concluido(){
+export default function Concluido(props){
+    const {cards, respondidas} = props;
     return(
         <SCConcluido>
-            <p>0/0 CONCLUÍDOS</p>
+            <p>{respondidas.length}/{cards.length} CONCLUÍDOS</p>
         </SCConcluido>
     );
 }
