@@ -3,7 +3,7 @@ import styled from "styled-components";
 export default function Concluido(props){
     const {cards, respondidas} = props;
     return(
-        <SCConcluido>
+        <SCConcluido data-test="footer">
             <p>{respondidas.length}/{cards.length} CONCLUÍDOS</p>
         </SCConcluido>
     );

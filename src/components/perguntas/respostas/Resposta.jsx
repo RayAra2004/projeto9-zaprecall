@@ -13,13 +13,25 @@ function responder(answer, color, respondidas, setRespondidas, indice){
     }
 }
 
+function dataTestResposta(c){
+    if(c === '#2FBE34'){
+        return 'zap-btn'
+    }
+    if(c === '#FF922E'){
+        return 'partial-btn'
+    }
+    if(c === '#FF3030'){
+        return 'no-btn'
+    }
+}
+
 export default function Resposta(props){
     const {answer, color} = props.possivel;
     const {respondidas, setRespondidas, indice} = props;
-
+    let test = dataTestResposta(color);
     return(
         <>
-            <SCResposta onClick={() => responder(answer, color, respondidas, setRespondidas, indice)} color = {color}>{answer}</SCResposta>
+            <SCResposta data-test={test} onClick={() => responder(answer, color, respondidas, setRespondidas, indice)} color = {color}>{answer}</SCResposta>
         </>
     );
 }

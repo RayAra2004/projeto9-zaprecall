@@ -21,32 +21,32 @@ export default function Pergunta(props){
     if(!(mostrarPerguntas.includes(props.indice))){
         pergunta = (
             <SCPergunta>
-                <p>Pergunta {props.indice + 1}</p>
-                <img src={play} alt="play" onClick={() => setMostrarPerguntas([...mostrarPerguntas, props.indice])}/>
+                <p data-test="flashcard-text" >Pergunta {props.indice + 1}</p>
+                <img data-test="play-btn" src={play} alt="play" onClick={() => setMostrarPerguntas([...mostrarPerguntas, props.indice])}/>
             </SCPergunta>
         );
     }else if(indexes.includes(props.indice)){
         if(colors[indexes.indexOf(props.indice)] === '#2FBE34'){
             pergunta = (
                 <SCRespondido color={colors[indexes.indexOf(props.indice)]}>
-                    <p>Pergunta {props.indice + 1}</p>
-                    <img src={certo}/>
+                    <p data-test="flashcard-text" >Pergunta {props.indice + 1}</p>
+                    <img data-test="zap-icon" src={certo}/>
                 </SCRespondido>
             );
         }
         if(colors[indexes.indexOf(props.indice)] === '#FF922E'){
             pergunta = (
                 <SCRespondido color={colors[indexes.indexOf(props.indice)]}>
-                    <p>Pergunta {props.indice + 1}</p>
-                    <img src={quase}/>
+                    <p data-test="flashcard-text" >Pergunta {props.indice + 1}</p>
+                    <img data-test="partial-icon" src={quase}/>
                 </SCRespondido>
             );
         }
         if(colors[indexes.indexOf(props.indice)] === '#FF3030'){
             pergunta = (
                 <SCRespondido color={colors[indexes.indexOf(props.indice)]}>
-                    <p>Pergunta {props.indice + 1}</p>
-                    <img src={erro}/>
+                    <p data-test="flashcard-text" >Pergunta {props.indice + 1}</p>
+                    <img data-test="no-icon" src={erro}/>
                 </SCRespondido>
             );
         }
@@ -54,7 +54,7 @@ export default function Pergunta(props){
     }else if(mostrarRespostas.includes(props.indice)){
         pergunta = (
             <SCTermo>
-                <p>{answer}</p>
+                <p data-test="flashcard-text" >{answer}</p>
                 <Respostas
                     respondidas = {respondidas}
                     setRespondidas = {setRespondidas}
@@ -65,13 +65,13 @@ export default function Pergunta(props){
     }else{
         pergunta =(
             <SCTermo>
-                <p>{question}</p>
-                <img src={virar} onClick={() => setMostrarRespostas([...mostrarRespostas, props.indice])}/>
+                <p data-test="flashcard-text" >{question}</p>
+                <img data-test="turn-btn" src={virar} onClick={() => setMostrarRespostas([...mostrarRespostas, props.indice])}/>
             </SCTermo>
         );
     }
 
-    return <>{pergunta}</>
+    return <div data-test="flashcard">{pergunta}</div>
 }
 
 
