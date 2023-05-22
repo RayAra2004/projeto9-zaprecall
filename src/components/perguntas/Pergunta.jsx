@@ -14,7 +14,7 @@ function desestrutura(r){
 
 export default function Pergunta(props){
     const {question, answer} = props.card;
-    const {mostrarPerguntas, setMostrarPerguntas, mostrarRespostas, setMostrarRespostas, respondidas, setRespondidas} = props;
+    const {mostrarPerguntas, setMostrarPerguntas, mostrarRespostas, setMostrarRespostas, setMsgFinal, respondidas, setRespondidas, resultados, setResultados, cards} = props;
     let pergunta;
 
     const [indexes, colors] = desestrutura(respondidas);
@@ -59,6 +59,10 @@ export default function Pergunta(props){
                     respondidas = {respondidas}
                     setRespondidas = {setRespondidas}
                     indice = {props.indice}
+                    resultados = {resultados}
+                    setResultados = {setResultados}
+                    cards = {cards}
+                    setMsgFinal = {setMsgFinal}
                 />
             </SCTermo>
         );

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Resposta from "./Resposta";
 
 export default function Respostas(props){
-    const {respondidas, setRespondidas, indice} = props;
+    const {respondidas, setRespondidas, indice, resultados, setResultados, cards, setMsgFinal} = props;
 
     const possRespostas = [
         {answer: 'Não lembrei', color: '#FF3030'},
@@ -17,6 +17,10 @@ export default function Respostas(props){
                 respondidas = {respondidas} 
                 setRespondidas = {setRespondidas}
                 indice = {indice}
+                resultados = {resultados}
+                setResultados = {setResultados}
+                cards = {cards}
+                setMsgFinal = {setMsgFinal}
             />)}
         </SCRespostas>
     );

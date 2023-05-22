@@ -4,7 +4,7 @@ import Pergunta from './Pergunta';
 import { useState } from 'react';
 
 export default function Perguntas(props){
-    const {cards, respondidas, setRespondidas} = props;
+    const {cards, respondidas, setRespondidas, resultados, setResultados, setMsgFinal} = props;
     const [mostrarPerguntas, setMostrarPerguntas] = useState([]);
     const [mostrarRespostas, setMostrarRespostas] = useState([]);
 
@@ -20,6 +20,10 @@ export default function Perguntas(props){
                 setMostrarRespostas = {setMostrarRespostas}
                 respondidas = {respondidas}
                 setRespondidas = {setRespondidas}
+                resultados = {resultados}
+                setResultados = {setResultados}
+                cards = {cards}
+                setMsgFinal = {setMsgFinal}
                 />
             )}
         </SCPerguntas>
